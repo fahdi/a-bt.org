@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Access to a Better Tomorrow</title>
+    <meta name="keywords" content="Access to a Better Tomorrow" />
+    <meta name="description" content="a-bt.org - Access to a Better Tomorrow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+       <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <!-- LayerSlider styles -->
+    <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <link rel="stylesheet" href="css/bule.css" id="coloroption">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/yummi-loader.css">
+    
+  
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+  <!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+    <script src="layerslider/jQuery/jquery-easing-1.3.js" type="text/javascript"></script>
+    <script src="layerslider/jQuery/jquery-transit-modified.js" type="text/javascript"></script>
+     
+    <!-- LayerSlider from Kreatura Media with Transitions -->
+    <script src="layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+    <script src="layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js"></script>
+	
+	
+<script>
+    // Semicolon (;) to ensure closing of earlier scripting
+    // Encapsulation
+    // $ is assigned to jQuery
+    ;(function($) {
+
+         // DOM Ready
+        $(function() {
+
+            // Binding a click event
+            // From jQuery v.1.7.0 use .on() instead of .bind()
+            $('#my-button').bind('click', function(e) {
+
+                // Prevents the default action to be triggered. 
+                e.preventDefault();
+
+                // Triggering bPopup when click event is fired
+                $('#element_to_pop_up').bPopup();
+
+            });
+
+        });
+
+    })(jQuery);
+
+/*================================================================================
+ * @name: bPopup - if you can't get it up, use bPopup
+ * @author: (c)Bjoern Klinggaard (twitter@bklinggaard)
+ * @demo: http://dinbror.dk/bpopup
+ * @version: 0.9.4.min
+ ================================================================================*/
+ (function(b){b.fn.bPopup=function(z,F){function K(){a.contentContainer=b(a.contentContainer||c);switch(a.content){case "iframe":var h=b('<iframe class="b-iframe" '+a.iframeAttr+"></iframe>");h.appendTo(a.contentContainer);r=c.outerHeight(!0);s=c.outerWidth(!0);A();h.attr("src",a.loadUrl);k(a.loadCallback);break;case "image":A();b("<img />").load(function(){k(a.loadCallback);G(b(this))}).attr("src",a.loadUrl).hide().appendTo(a.contentContainer);break;default:A(),b('<div class="b-ajax-wrapper"></div>').load(a.loadUrl,a.loadData,function(){k(a.loadCallback);G(b(this))}).hide().appendTo(a.contentContainer)}}function A(){a.modal&&b('<div class="b-modal '+e+'"></div>').css({backgroundColor:a.modalColor,position:"fixed",top:0,right:0,bottom:0,left:0,opacity:0,zIndex:a.zIndex+t}).appendTo(a.appendTo).fadeTo(a.speed,a.opacity);D();c.data("bPopup",a).data("id",e).css({left:"slideIn"==a.transition||"slideBack"==a.transition?"slideBack"==a.transition?g.scrollLeft()+u:-1*(v+s):l(!(!a.follow[0]&&m||f)),position:a.positionStyle||"absolute",top:"slideDown"==a.transition||"slideUp"==a.transition?"slideUp"==a.transition?g.scrollTop()+w:x+-1*r:n(!(!a.follow[1]&&p||f)),"z-index":a.zIndex+t+1}).each(function(){a.appending&&b(this).appendTo(a.appendTo)});H(!0)}function q(){a.modal&&b(".b-modal."+c.data("id")).fadeTo(a.speed,0,function(){b(this).remove()});a.scrollBar||b("html").css("overflow","auto");b(".b-modal."+e).unbind("click");g.unbind("keydown."+e);d.unbind("."+e).data("bPopup",0<d.data("bPopup")-1?d.data("bPopup")-1:null);c.undelegate(".bClose, ."+a.closeClass,"click."+e,q).data("bPopup",null);H();return!1}function G(h){var b=h.width(),e=h.height(),d={};a.contentContainer.css({height:e,width:b});e>=c.height()&&(d.height=c.height());b>=c.width()&&(d.width=c.width());r=c.outerHeight(!0);s=c.outerWidth(!0);D();a.contentContainer.css({height:"auto",width:"auto"});d.left=l(!(!a.follow[0]&&m||f));d.top=n(!(!a.follow[1]&&p||f));c.animate(d,250,function(){h.show();B=E()})}function L(){d.data("bPopup",t);c.delegate(".bClose, ."+a.closeClass,"click."+e,q);a.modalClose&&b(".b-modal."+e).css("cursor","pointer").bind("click",q);M||!a.follow[0]&&!a.follow[1]||d.bind("scroll."+e,function(){B&&c.dequeue().animate({left:a.follow[0]?l(!f):"auto",top:a.follow[1]?n(!f):"auto"},a.followSpeed,a.followEasing)}).bind("resize."+e,function(){w=y.innerHeight||d.height();u=y.innerWidth||d.width();if(B=E())clearTimeout(I),I=setTimeout(function(){D();c.dequeue().each(function(){f?b(this).css({left:v,top:x}):b(this).animate({left:a.follow[0]?l(!0):"auto",top:a.follow[1]?n(!0):"auto"},a.followSpeed,a.followEasing)})},50)});a.escClose&&g.bind("keydown."+e,function(a){27==a.which&&q()})}function H(b){function d(e){c.css({display:"block",opacity:1}).animate(e,a.speed,a.easing,function(){J(b)})}switch(b?a.transition:a.transitionClose||a.transition){case "slideIn":d({left:b?l(!(!a.follow[0]&&m||f)):g.scrollLeft()-(s||c.outerWidth(!0))-C});break;case "slideBack":d({left:b?l(!(!a.follow[0]&&m||f)):g.scrollLeft()+u+C});break;case "slideDown":d({top:b?n(!(!a.follow[1]&&p||f)):g.scrollTop()-(r||c.outerHeight(!0))-C});break;case "slideUp":d({top:b?n(!(!a.follow[1]&&p||f)):g.scrollTop()+w+C});break;default:c.stop().fadeTo(a.speed,b?1:0,function(){J(b)})}}function J(b){b?(L(),k(F),a.autoClose&&setTimeout(q,a.autoClose)):(c.hide(),k(a.onClose),a.loadUrl&&(a.contentContainer.empty(),c.css({height:"auto",width:"auto"})))}function l(a){return a?v+g.scrollLeft():v}function n(a){return a?x+g.scrollTop():x}function k(a){b.isFunction(a)&&a.call(c)}function D(){x=p?a.position[1]:Math.max(0,(w-c.outerHeight(!0))/2-a.amsl);v=m?a.position[0]:(u-c.outerWidth(!0))/2;B=E()}function E(){return w>c.outerHeight(!0)&&u>c.outerWidth(!0)}b.isFunction(z)&&(F=z,z=null);var a=b.extend({},b.fn.bPopup.defaults,z);a.scrollBar||b("html").css("overflow","hidden");var c=this,g=b(document),y=window,d=b(y),w=y.innerHeight||d.height(),u=y.innerWidth||d.width(),M=/OS 6(_\d)+/i.test(navigator.userAgent),C=200,t=0,e,B,p,m,f,x,v,r,s,I;c.close=function(){a=this.data("bPopup");e="__b-popup"+d.data("bPopup")+"__";q()};return c.each(function(){b(this).data("bPopup")||(k(a.onOpen),t=(d.data("bPopup")||0)+1,e="__b-popup"+t+"__",p="auto"!==a.position[1],m="auto"!==a.position[0],f="fixed"===a.positionStyle,r=c.outerHeight(!0),s=c.outerWidth(!0),a.loadUrl?K():A())})};b.fn.bPopup.defaults={amsl:50,appending:!0,appendTo:"body",autoClose:!1,closeClass:"b-close",content:"ajax",contentContainer:!1,easing:"swing",escClose:!0,follow:[!0,!0],followEasing:"swing",followSpeed:500,iframeAttr:'scrolling="no" frameborder="0"',loadCallback:!1,loadData:!1,loadUrl:!1,modal:!0,modalClose:!0,modalColor:"#000",onClose:!1,onOpen:!1,opacity:0.7,position:["auto","auto"],positionStyle:"absolute",scrollBar:!0,speed:250,transition:"fadeIn",transitionClose:!1,zIndex:9997}})(jQuery);
+
+
+</script>
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+    <![endif]-->
+
+  </head>
+  <body class="off">
+        <div id="mukam-layout">
+    <!-- Top Section -->
+     
+    <!-- Header -->
+    <header id="mukam-header" class="mukam-header mukam-header-large header-5 fixbottom fadein scaleInv anim_1">
+      <div class="top-section-container">
+      <div class="top-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <div class="social">
+             
+                <a href="https://www.facebook.com/pages/Access-To-A-Better-Tomorrow/7574851076461966"><div class="social-box"><i class="mukam-face"></i></div></a>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         
+    </div>    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          <!-- Main Menu -->
+          <nav class="navbar navbar-default header-5" role="navigation">
+          <div class="navbar-header">
+            <a id="my-button" href="#"><img class="logo" src="img/logo.png" alt="mukam"></a><!-- Button that triggers the popup -->
+
+<!-- Element to pop up -->
+<div id="element_to_pop_up">
+    <a class="b-close">Close<a/>
+    <img class="logo" src="img/logo.png" alt="Access to a Better Tomorrow"></br></br></br></br></br></br>
+	<p style="font-size:18px; font-weight: bold">Taking it's inspiration from new accessibility symbol designed by Sara Hendren from Accessible Icon Project http://www.accessibleicon.org/</br>
+the letter ‘a’ in Access has been rendered to promote the active and in-motion perspective of life, and this aligns with our organizations ideals</br> of self-
+empowerment among persons with disability. </br>
+The design was provided pro-bono by www.verynice.co and special thanks to Bora Shin and especially Aarti Vashisht for her creativity.</p>
+</div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="shopping">
+            
+            <ul class="ashu"><a href="resources.html"><li><img src="icon_1.png" ><p>Healthcare</p></li></a><a href="resources.html"><li><img src="icon_2.png" ><p>Housing</p></li> </a><a href="resources.html"><li><img src="icon_3.png" ><p>Education</p></li></a><a href="resources.html"><li><img src="icon_4.png" ><p>Transportation</p></li></a><a href="resources.html"><li><img src="icon_5.png" ><p>Employment</p></li></a><a href="resources.html"><li><img src="icon_6.png" ><p>Recreation/Sport</p></li></a><a href="resources.html"><li><img src="icon_7.png" ><p>Communication</p></li></a></ul></div>
+           
+
+
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+             <ul class="nav navbar-nav">
+              <li class="dropdown"><a href="index.html" class="active">HOME</a>
+              </li>
+             
+              <li><a href="about.html">ABOUT US</a>
+              </li>
+              <li><a href="resources.html">RESOURCES</a>
+              </li>
+              <li><a href="events.html">EVENTS</a>
+              </li>
+			  <li ><a href="news.html">NEWS</a>
+             
+              </li>
+			  <li><a href="donate.html">DONATE</a>
+             
+              </li>
+             <li><a href="contactus.html">CONTACT US</a>
+             
+              </li>
+            </ul>
+           
+          </div><!-- /.navbar-collapse -->
+        </nav>
+        </div>
+      </div>
+    </div>
+</header>
+    <section class="mukam-waypoint" data-animate-down="mukam-header-small header-1" data-animate-up="mukam-header-large header-1">
+ <!-- Caption 
+    <div class="caption-out fadein scaleInv anim_2">
+      <div class="parallax-caption" data-stellar-background-ratio="2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 caption">
+          <h3 class="fadein scaleInv anim_3">Portfolio Classic</h3>
+          <p class="fadein scaleInv anim_4">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+        </div>
+        <div class="col-md-3 breadcrumb fadein scaleInv anim_5">
+        <ul><li><a href="#">Home</a></li><li>/ <a href="#">Pages</a></li><li>/ Portfolio Classic</li></ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>-->
+  <div class="caption-out fadein scaleInv anim_2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 caption">
+          <h3>Tabs</h3>
+          <p class="fadein scaleInv anim_4">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+        </div>
+        <div class="col-md-3 breadcrumb fadein scaleInv anim_5">
+        <ul><li><a href="#">Home</a></li><li>/ <a href="#">Pages</a></li><li>/ Tabs</li></ul>
+        </div>
+      </div>
+    </div>
+    </div>
+<!-- Featured - 404 Content -->  
+<!-- Latest Work Grid -->
+  <div class="bg-color white">
+      <div class="container">
+        <div class="row fadein scaleInv anim_3">
+    <div class="latest-word-grid-container fadein scaleInv anim_5">
+      <div class="col-sm-3 col-md-3">
+        <div class="menu-widget">
+        <h4>Features</h4>
+        <ul>
+          <a href="notifications.html"><li>Notifications</li></a>
+          <a href="accordion.html"><li>Accordions</li></a>
+          <a href="skillsbars.html"><li>Skills Bars</li></a>
+          <a href="buttons.html"><li>Buttons</li></a>
+          <a href="googlemaps.html"><li>Google Maps</li></a>
+          <a href="tabs.html"><li class="active">Tabs</li></a>
+          <a href="featured-faqs.html"><li>FAQ's</li></a>
+          <a href="featured-tables.html"><li>Tables</li></a>
+          <a href="teamelements.html"><li>Team Elements</li></a>
+          <a href="contactforms.html"><li>Contact Forms</li></a>
+          <a href="typography.html"><li>Typography</li></a>
+          <a href="featured-404.html"><li>404 ERROR</li></a>
+        </ul>
+        </div>
+      </div>
+       </div>
+        
+      <div class="col-sm-9 col-md-9">
+        <div class="tabs-classic">
+        <h3>Standard <span>Tabs</span></h3>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#home2" data-toggle="tab">HOME</a></li>
+          <li><a href="#tabone" data-toggle="tab">PROFILE</a></li>
+          <li><a href="#tabtwo" data-toggle="tab">MESSAGES</a></li>
+          <li><a href="#tabthree" data-toggle="tab">SETTINGS</a></li>
+          <li><a href="#tabfour" data-toggle="tab">SEO</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="home2">
+            <img src="content/featured-tabs.jpg" class="pull-right">
+          <p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+
+          <p>A million [bleep]ing diamonds! If I look like a man who made love to his wife last night – it’s because I almost did. You can always tell a Milford man. And THAT’S why you always leave a note. Yo quiero leche. Yo quiero leche de madre. Hey, it was one night of wild passion! And yet you didn’t notice her body? I like to look in the mirror. I run a pretty tight ship around here. With a pool table. It’s a gaming ship.</p>
+          </div>
+          <div class="tab-pane" id="tabone"><p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+          </div>
+
+          <div class="tab-pane" id="tabtwo"><p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+          </div>
+
+          <div class="tab-pane" id="tabthree"><p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+
+          <p>A million [bleep]ing diamonds! If I look like a man who made love to his wife last night – it’s because I almost did. You can always tell a Milford man. And THAT’S why you always leave a note. Yo quiero leche. Yo quiero leche de madre. Hey, it was one night of wild passion! And yet you didn’t notice her body? I like to look in the mirror. I run a pretty tight ship around here. With a pool table. It’s a gaming ship.</p></div>
+
+          <div class="tab-pane" id="tabfour"><p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+          </div>
+
+        </div>
+        </div>
+
+        <div class="tour-section-2">
+        <h3 class="features-title">Multipurpose <span>Tabs</span></h3>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#tabone-1" data-toggle="tab"><i class="anyoldicon-anton-boshoff-headset pull-left"></i>TAB ONE</a></li>
+          <li><a href="#tabtwo-1" data-toggle="tab"><i class="mukam-video pull-left"></i>TAB TWO</a></li>
+          <li><a href="#tabthree-1" data-toggle="tab"><i class="mukam-image pull-left"></i>TAB THREE</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tabone-1">
+          <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/78433468&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=true"></iframe>
+          </div>
+          <div class="tab-pane" id="tabtwo-1">The falcate consonant reveals itself as an astute factory to those who look. The waveless  kilogram reveals itself as The calendar of a rake becomes a sulkies quotation. Their industry was, in this moment, an awful effect.
+          <br><br>Framed in a different way, few can name an unsaid bit that isn’t a distilled history.a wailing square to those who look. This is not to discredit the idea that a medicine is a step-grandfather.</div>
+          <div class="tab-pane" id="tabthree-1">The falcate consonant reveals itself as an astute factory to those who look. The waveless  kilogram reveals itself as The calendar of a rake becomes a sulkies quotation. Their industry was, in this moment, an awful effect.
+          <br><br>Framed in a different way, few can name an unsaid bit that isn’t a distilled history.a wailing square to those who look. This is not to discredit the idea that a medicine is a step-grandfather.</div>
+        </div>
+        </div>
+        <div class="tour-section-2">
+        <h3 class="features-title">Multipurpose <span>Tabs</span></h3>
+        <ul class="nav nav-tabs pull-right">
+          <li class="active"><a href="#tabone-2" data-toggle="tab"><i class="anyoldicon-anton-boshoff-headset pull-left"></i>TAB ONE</a></li>
+          <li><a href="#tabtwo-2" data-toggle="tab"><i class="mukam-video pull-left"></i>TAB TWO</a></li>
+          <li><a href="#tabthree-2" data-toggle="tab"><i class="mukam-image pull-left"></i>TAB THREE</a></li>
+        </ul>
+        <div class="tab-content pull-right">
+          <div class="tab-pane active" id="tabone-2">
+          <img src="content/featured-tabs.jpg" class="pull-right">
+          <p>Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+
+          <p>A million [bleep]ing diamonds! If I look like a man who made love to his wife last night – it’s because I almost did. You can always tell a Milford man. And THAT’S.</p>
+          </div>
+          <div class="tab-pane" id="tabtwo-2">The falcate consonant reveals itself as an astute factory to those who look. The waveless  kilogram reveals itself as The calendar of a rake becomes a sulkies quotation. Their industry was, in this moment, an awful effect.
+          <br><br>Framed in a different way, few can name an unsaid bit that isn’t a distilled history.a wailing square to those who look. This is not to discredit the idea that a medicine is a step-grandfather.</div>
+          <div class="tab-pane" id="tabthree-2">The falcate consonant reveals itself as an astute factory to those who look. The waveless  kilogram reveals itself as The calendar of a rake becomes a sulkies quotation. Their industry was, in this moment, an awful effect.
+          <br><br>Framed in a different way, few can name an unsaid bit that isn’t a distilled history.a wailing square to those who look. This is not to discredit the idea that a medicine is a step-grandfather.</div>
+        </div>
+        </div>
+        <div class="tour-section">
+        <h3>Multipurpose <span>Tabs</span></h3>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#webdesign" data-toggle="tab"><i class="mukam-imac"></i>WEB DESIGN</a></li>
+          <li><a href="#creativeideas" data-toggle="tab"><i class="mukam-science"></i>CREATIVE IDEAS</a></li>
+          <li><a href="#support" data-toggle="tab"><i class="mukam-clock"></i>SUPPORT 7/24</a></li>
+          <li><a href="#photography" data-toggle="tab"><i class="mukam-photo"></i>PHOTOGRAPHY</a></li>
+          <li><a href="#ios" data-toggle="tab"><i class="mukam-mobile"></i>IOS DEVELOPMENT</a></li>
+          <li><a href="#search" data-toggle="tab"><i class="mukam-search"></i>SEARCH FRIENDLY</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="webdesign"><img src="content/tab-icon.png" class="pull-right">
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. It was popularised in the 1960s with the release of Letraset sheets containing.<br><br>of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.<br><br>It was popularised in the 1960s with the release of Letraset sheets containing.
+          </div>
+          <div class="tab-pane" id="creativeideas">
+           It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</div>
+          <div class="tab-pane" id="support"><img src="content/tab-icon.png" class="pull-right">
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. It was popularised in the 1960s with the release of Letraset sheets containing.<br><br>of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.<br><br>It was popularised in the 1960s with the release of Letraset sheets containing.</div>
+          <div class="tab-pane" id="photography">
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</div>
+          <div class="tab-pane" id="ios"><img src="content/tab-icon.png" class="pull-right">
+          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting. It was popularised in the 1960s with the release of Letraset sheets containing.<br><br>of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.<br><br>It was popularised in the 1960s with the release of Letraset sheets containing.</div>
+          <div class="tab-pane" id="search">
+          It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</div>
+        </div>
+        </div>
+      </div>
+    
+   
+    </div>
+    </div>
+  </div>
+
+
+<!-- Bottom Section -->
+
+</section>
+  <footer>
+      <div class="container">
+        <div class="row">
+
+         
+
+
+        </div>
+      </div>
+      <div class="bg-color black fixed-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="copyright-section"><p>Copyright © 2014 Access to a Better Tomorrow. All rights reserved.</p></div>
+            </div>
+<div class="col-sm-6 col-md-6" style="padding-top:18px;>
+            <div class="social">
+             
+                <a href="https://www.facebook.com/pages/Access-To-A-Better-Tomorrow/7574851076461966"><div class="social-box"><i class="mukam-face"></i></div></a>  
+            </div>
+          </div>
+  
+			
+			
+          </div>
+        </div>
+      </div>
+    </footer>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="js/jquery.queryloader2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
+    <script src="js/jquery.carouFredSel-6.2.1.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script> 
+    <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <!-- Masonry -->
+    <script src="js/masonry.pkgd.min.js"></script> 
+    <script src="js/SmoothScroll.js"></script>   
+    <!-- Main.js should be below all javascript --> 
+    <script src="js/main.js"></script>
+    <script src="js/styleswitcher.js"></script>
+
+
+  </body>
+</html>

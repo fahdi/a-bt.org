@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Access to a Better Tomorrow</title>
+    <meta name="keywords" content="Access to a Better Tomorrow" />
+    <meta name="description" content="a-bt.org - Access to a Better Tomorrow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+       <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <!-- LayerSlider styles -->
+    <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <link rel="stylesheet" href="css/bule.css" id="coloroption">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/yummi-loader.css">
+    
+  
+    <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+  <!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+    <script src="layerslider/jQuery/jquery-easing-1.3.js" type="text/javascript"></script>
+    <script src="layerslider/jQuery/jquery-transit-modified.js" type="text/javascript"></script>
+     
+    <!-- LayerSlider from Kreatura Media with Transitions -->
+    <script src="layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+    <script src="layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js"></script>
+	
+	
+<script>
+    // Semicolon (;) to ensure closing of earlier scripting
+    // Encapsulation
+    // $ is assigned to jQuery
+    ;(function($) {
+
+         // DOM Ready
+        $(function() {
+
+            // Binding a click event
+            // From jQuery v.1.7.0 use .on() instead of .bind()
+            $('#my-button').bind('click', function(e) {
+
+                // Prevents the default action to be triggered. 
+                e.preventDefault();
+
+                // Triggering bPopup when click event is fired
+                $('#element_to_pop_up').bPopup();
+
+            });
+
+        });
+
+    })(jQuery);
+
+/*================================================================================
+ * @name: bPopup - if you can't get it up, use bPopup
+ * @author: (c)Bjoern Klinggaard (twitter@bklinggaard)
+ * @demo: http://dinbror.dk/bpopup
+ * @version: 0.9.4.min
+ ================================================================================*/
+ (function(b){b.fn.bPopup=function(z,F){function K(){a.contentContainer=b(a.contentContainer||c);switch(a.content){case "iframe":var h=b('<iframe class="b-iframe" '+a.iframeAttr+"></iframe>");h.appendTo(a.contentContainer);r=c.outerHeight(!0);s=c.outerWidth(!0);A();h.attr("src",a.loadUrl);k(a.loadCallback);break;case "image":A();b("<img />").load(function(){k(a.loadCallback);G(b(this))}).attr("src",a.loadUrl).hide().appendTo(a.contentContainer);break;default:A(),b('<div class="b-ajax-wrapper"></div>').load(a.loadUrl,a.loadData,function(){k(a.loadCallback);G(b(this))}).hide().appendTo(a.contentContainer)}}function A(){a.modal&&b('<div class="b-modal '+e+'"></div>').css({backgroundColor:a.modalColor,position:"fixed",top:0,right:0,bottom:0,left:0,opacity:0,zIndex:a.zIndex+t}).appendTo(a.appendTo).fadeTo(a.speed,a.opacity);D();c.data("bPopup",a).data("id",e).css({left:"slideIn"==a.transition||"slideBack"==a.transition?"slideBack"==a.transition?g.scrollLeft()+u:-1*(v+s):l(!(!a.follow[0]&&m||f)),position:a.positionStyle||"absolute",top:"slideDown"==a.transition||"slideUp"==a.transition?"slideUp"==a.transition?g.scrollTop()+w:x+-1*r:n(!(!a.follow[1]&&p||f)),"z-index":a.zIndex+t+1}).each(function(){a.appending&&b(this).appendTo(a.appendTo)});H(!0)}function q(){a.modal&&b(".b-modal."+c.data("id")).fadeTo(a.speed,0,function(){b(this).remove()});a.scrollBar||b("html").css("overflow","auto");b(".b-modal."+e).unbind("click");g.unbind("keydown."+e);d.unbind("."+e).data("bPopup",0<d.data("bPopup")-1?d.data("bPopup")-1:null);c.undelegate(".bClose, ."+a.closeClass,"click."+e,q).data("bPopup",null);H();return!1}function G(h){var b=h.width(),e=h.height(),d={};a.contentContainer.css({height:e,width:b});e>=c.height()&&(d.height=c.height());b>=c.width()&&(d.width=c.width());r=c.outerHeight(!0);s=c.outerWidth(!0);D();a.contentContainer.css({height:"auto",width:"auto"});d.left=l(!(!a.follow[0]&&m||f));d.top=n(!(!a.follow[1]&&p||f));c.animate(d,250,function(){h.show();B=E()})}function L(){d.data("bPopup",t);c.delegate(".bClose, ."+a.closeClass,"click."+e,q);a.modalClose&&b(".b-modal."+e).css("cursor","pointer").bind("click",q);M||!a.follow[0]&&!a.follow[1]||d.bind("scroll."+e,function(){B&&c.dequeue().animate({left:a.follow[0]?l(!f):"auto",top:a.follow[1]?n(!f):"auto"},a.followSpeed,a.followEasing)}).bind("resize."+e,function(){w=y.innerHeight||d.height();u=y.innerWidth||d.width();if(B=E())clearTimeout(I),I=setTimeout(function(){D();c.dequeue().each(function(){f?b(this).css({left:v,top:x}):b(this).animate({left:a.follow[0]?l(!0):"auto",top:a.follow[1]?n(!0):"auto"},a.followSpeed,a.followEasing)})},50)});a.escClose&&g.bind("keydown."+e,function(a){27==a.which&&q()})}function H(b){function d(e){c.css({display:"block",opacity:1}).animate(e,a.speed,a.easing,function(){J(b)})}switch(b?a.transition:a.transitionClose||a.transition){case "slideIn":d({left:b?l(!(!a.follow[0]&&m||f)):g.scrollLeft()-(s||c.outerWidth(!0))-C});break;case "slideBack":d({left:b?l(!(!a.follow[0]&&m||f)):g.scrollLeft()+u+C});break;case "slideDown":d({top:b?n(!(!a.follow[1]&&p||f)):g.scrollTop()-(r||c.outerHeight(!0))-C});break;case "slideUp":d({top:b?n(!(!a.follow[1]&&p||f)):g.scrollTop()+w+C});break;default:c.stop().fadeTo(a.speed,b?1:0,function(){J(b)})}}function J(b){b?(L(),k(F),a.autoClose&&setTimeout(q,a.autoClose)):(c.hide(),k(a.onClose),a.loadUrl&&(a.contentContainer.empty(),c.css({height:"auto",width:"auto"})))}function l(a){return a?v+g.scrollLeft():v}function n(a){return a?x+g.scrollTop():x}function k(a){b.isFunction(a)&&a.call(c)}function D(){x=p?a.position[1]:Math.max(0,(w-c.outerHeight(!0))/2-a.amsl);v=m?a.position[0]:(u-c.outerWidth(!0))/2;B=E()}function E(){return w>c.outerHeight(!0)&&u>c.outerWidth(!0)}b.isFunction(z)&&(F=z,z=null);var a=b.extend({},b.fn.bPopup.defaults,z);a.scrollBar||b("html").css("overflow","hidden");var c=this,g=b(document),y=window,d=b(y),w=y.innerHeight||d.height(),u=y.innerWidth||d.width(),M=/OS 6(_\d)+/i.test(navigator.userAgent),C=200,t=0,e,B,p,m,f,x,v,r,s,I;c.close=function(){a=this.data("bPopup");e="__b-popup"+d.data("bPopup")+"__";q()};return c.each(function(){b(this).data("bPopup")||(k(a.onOpen),t=(d.data("bPopup")||0)+1,e="__b-popup"+t+"__",p="auto"!==a.position[1],m="auto"!==a.position[0],f="fixed"===a.positionStyle,r=c.outerHeight(!0),s=c.outerWidth(!0),a.loadUrl?K():A())})};b.fn.bPopup.defaults={amsl:50,appending:!0,appendTo:"body",autoClose:!1,closeClass:"b-close",content:"ajax",contentContainer:!1,easing:"swing",escClose:!0,follow:[!0,!0],followEasing:"swing",followSpeed:500,iframeAttr:'scrolling="no" frameborder="0"',loadCallback:!1,loadData:!1,loadUrl:!1,modal:!0,modalClose:!0,modalColor:"#000",onClose:!1,onOpen:!1,opacity:0.7,position:["auto","auto"],positionStyle:"absolute",scrollBar:!0,speed:250,transition:"fadeIn",transitionClose:!1,zIndex:9997}})(jQuery);
+
+
+</script>
+    <!--[if IE 7]>
+      <link rel="stylesheet" href="css/font-awesome-ie7.min.css">
+    <![endif]-->
+
+  </head>
+  <body class="off">
+        <div id="mukam-layout">
+    <!-- Top Section -->
+     
+    <!-- Header -->
+    <header id="mukam-header" class="mukam-header mukam-header-large header-5 fixbottom fadein scaleInv anim_1">
+      <div class="top-section-container">
+      <div class="top-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-md-6">
+          </div>
+          <div class="col-sm-6 col-md-6">
+            <div class="social">
+             
+                <a href="https://www.facebook.com/pages/Access-To-A-Better-Tomorrow/7574851076461966"><div class="social-box"><i class="mukam-face"></i></div></a>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         
+    </div>    
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          <!-- Main Menu -->
+          <nav class="navbar navbar-default header-5" role="navigation">
+          <div class="navbar-header">
+            <a id="my-button" href="#"><img class="logo" src="img/logo.png" alt="mukam"></a><!-- Button that triggers the popup -->
+
+<!-- Element to pop up -->
+<div id="element_to_pop_up">
+    <a class="b-close">Close<a/>
+    <img class="logo" src="img/logo.png" alt="Access to a Better Tomorrow"></br></br></br></br></br></br>
+	<p style="font-size:18px; font-weight: bold">Taking it's inspiration from new accessibility symbol designed by Sara Hendren from Accessible Icon Project http://www.accessibleicon.org/</br>
+the letter �a� in Access has been rendered to promote the active and in-motion perspective of life, and this aligns with our organizations ideals</br> of self-
+empowerment among persons with disability. </br>
+The design was provided pro-bono by www.verynice.co and special thanks to Bora Shin and especially Aarti Vashisht for her creativity.</p>
+</div>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="shopping">
+            
+            <ul class="ashu"><a href="resources.html"><li><img src="icon_1.png" ><p>Healthcare</p></li></a><a href="resources.html"><li><img src="icon_2.png" ><p>Housing</p></li> </a><a href="resources.html"><li><img src="icon_3.png" ><p>Education</p></li></a><a href="resources.html"><li><img src="icon_4.png" ><p>Transportation</p></li></a><a href="resources.html"><li><img src="icon_5.png" ><p>Employment</p></li></a><a href="resources.html"><li><img src="icon_6.png" ><p>Recreation/Sport</p></li></a><a href="resources.html"><li><img src="icon_7.png" ><p>Communication</p></li></a></ul></div>
+           
+
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+             <ul class="nav navbar-nav">
+              <li class="dropdown"><a href="index.html">HOME</a>
+              </li>
+             
+              <li><a href="about.html">ABOUT US</a>
+              </li>
+              <li><a href="resources.html" class="active">RESOURCES</a>
+              </li>
+              <li><a href="events.html">EVENTS</a>
+              </li>
+			  <li ><a href="news.html">NEWS</a>
+             
+              </li>
+			  <li><a href="donate.html">DONATE</a>
+             
+              </li>
+             <li><a href="contactus.html">CONTACT US</a>
+             
+              </li>
+            </ul>
+           
+          </div><!-- /.navbar-collapse -->
+        </nav>
+        </div>
+      </div>
+    </div>
+</header>
+    <section class="mukam-waypoint" data-animate-down="mukam-header-small header-1" data-animate-up="mukam-header-large header-1">
+
+  <div class="caption-out fadein scaleInv anim_2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 caption">
+          <h3>Resources</h3>
+          <p class="fadein scaleInv anim_4">Access to a Better Tomorrow</p>
+        </div>
+        <div class="col-md-3 breadcrumb fadein scaleInv anim_5">
+        <ul><li><a href="index.html">Home</a></li><li>/ Resources</li></ul>
+        </div>
+      </div>
+    </div>
+    </div>
+	
+ <!-- Tabs -->
+    <div class="bg-color">
+      <div class="container">
+        <div clas="row">
+     <div class="col-md-12">
+        <div class="tour-section">
+        <h3><span>Resources</span></h3>
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#healthcare" data-toggle="tab">Healthcare</a></li>
+          <li><a href="#housing" data-toggle="tab">Housing</a></li>
+          <li><a href="#employment" data-toggle="tab">Employment</a></li>
+          <li><a href="#education" data-toggle="tab">Education</a></li>
+          <li><a href="#transportation" data-toggle="tab">Transportation</a></li>
+          <li><a href="#recreation" data-toggle="tab">Recreation</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="healthcare"><img src="icon_1.png" class="pull-right">
+          <p>ABT is interested in starting a Consumer Owned Care Cooperative, similar to one started in Vermont in 2012. If you are interested and live in the Gainesville area, and you are on a Medicaid Waiver and self-direct your personal support staff, contact us for more information.</p>
+            <span>5 Star Quality</span>&nbsp;
+			<a href="http://healthypeople.gov/2020/topicsobjectives2020/overview.aspx?topicid=9"><img src="img/h.jpg"><a/>
+			&nbsp;
+			<a href="http://www.access-board.gov/guidelines-and-standards/health-care/about-this-rulemaking/proposed-standards"><p>Accessibility Standards for Medical Diagnostic Equipment </p></a>
+			
+		  </div>
+          <div class="tab-pane" id="housing"><img src="icon_2.png" class="pull-right">
+			
+			  <p>The Department of Housing and Urban Development has an excellent FAQ on the rights of Persons with Disabilities under the Fair Housing Act.
+<a href="http://portal.hud.gov/hudportal/HUD?src=/topics/information_for_disabled_persons">http://portal.hud.gov/hudportal/HUD?src=/topics/information_for_disabled_persons</p></a>
+<p>We promote the expansion of accessible and affordable housing. Search for available accessible units through a database housed by SocialServe. <a href="http://www.socialserve.com/tenant/GA/index.html?type=rental">http://www.socialserve.com/tenant/GA/index.html?type=rental </a>
+</P></div>
+			
+		  <div class="tab-pane" id="employment"><img src="icon_5.png" class="pull-right">
+		    <a href="http://www.respectabilityusa.org/"><img src="img/e.jpg"></a>
+			<p class="font-italic">
+			We are working with others for Respectability in Georgia, advocating for vocational assistance and paychecks instead of Social Security Checks for People with Disabilities, resulting in increased employment opportunities.</p>
+          &nbsp;
+		  <a href="http://www.walgreens.com/topic/sr/sr_talent_raises_productivity.jsp"><h3>Disability Inclusion Raises Productivity </h3></a>
+		  <p>Inclusive Workplace Couples Efficiency with Opportunity More to link to the above </p>
+		  <a href="http://gvra.georgia.gov/"><img src="img/g.png"></a>
+			</div>
+		  <div class="tab-pane" id="education"><img src="icon_3.png" class="pull-right">
+           <p class="font-italic"> <a href="http://www.gadoe.org/External-Affairs-and-Policy/Policy/Pages/Special-Needs-Scholarship-Program.aspx">Georgia Special Needs Scholarship Program</a>
+</p><p><a href="http://www.gpat.org/Georgia-Project-for-Assistive-Technology/Pages/default.aspx">Georgia Project for Assistive Technology</a>
+</p> 
+		  </div>
+          <div class="tab-pane" id="transportation"><img src="icon_4.png" class="pull-right">
+            <p class="font-italic">US DOT updates the Air Carrier Access Regulations<P>
+<p><a href="http://www.newmobility.com/2013/11/u-s-dot-updates-air-carrier-access-act-rules/">http://www.newmobility.com/2013/11/u-s-dot-updates-air-carrier-access-act-rules/</a></p>
+<p>The United States Access Board has developed guidelines for Transportation Facilities, Vehicles, and Vessels that govern accessibility to these services that can be found here: <a href="http://www.access-board.gov/guidelines-and-standards/transportation">http://www.access-board.gov/guidelines-and-standards/transportation</a><p>
+&nbsp;
+<h3>Georgia Resource Guide</h3>
+&nbsp;
+<p><a href="http://gatrustfund.org/pdf/goaheadask8.pdf
+">http://gatrustfund.org/pdf/goaheadask8.pdf</a></p>
+</p>
+		  </div>
+          <div class="tab-pane" id="recreation"><img src="icon_6.png" class="pull-right">
+         <p>Sport a Civil Right for Primary and Secondary School Students with Disabilities</p>
+			<p><a href="http://usgovinfo.about.com/b/2013/01/31/sports-now-a-civil-right-for-persons-with-disabilities.htm ">http://usgovinfo.about.com/b/2013/01/31/sports-now-a-civil-right-for-persons-with-disabilities.htm </a></p>
+            <p>What are the laws regarding adaptive and accessible sports and recreation? (link to the following info)</p>
+			<p>The federal Americans with Disabilities Act (ADA) prohibits discrimination on the basis of disability. In Recreation Access Rights Under the ADA, the National Center on Accessibility outlines some of the rights created by the ADA with respect to sports and recreation:</p>
+		   <ul class="list-none li-size">
+              <li><i class="mukam-list"></i><a href="#">right to the most integrated setting:
+People with disabilities and those without disabilities should be able to participate in activities alongside each other to the maximum extent possible
+</a><li>
+              <li><i class="mukam-list"></i><a href="#">right to participate:
+People with disabilities should be able to take part in any type of activity available to people without disabilities, as long as all essential eligibility requirements are met
+</a><li>
+			
+<li><i class="mukam-list"></i><a href="#">right to reasonable accommodations including adaptive equipment:
+The provider of an activity must make reasonable adjustments to allow people with disabilities to participate
+ </a><li>
+<li><i class="mukam-list"></i><a href="#">right to an assessment or evaluation:
+People with disabilities should not be prohibited from an activity due to a perceived safety risk without an evaluation of actual risk after accommodations
+ </a><li>
+
+            </ul>
+			<p>Exceptions to the ADA rules can be made in three cases: if the accommodation costs too much; if the accommodation is too difficult to make; or if the accommodation fundamentally changes the nature of the activity.</p>
+			<p>The ADA rules apply to government facilities and programs, nonprofit organizations (such as YMCAs), and private organizations (such as health clubs and gyms). The only exempt organizations are private membership clubs and religious organizations.</p>
+			<p><a href="http://www.access-board.gov/guidelines-and-standards/recreation-facilities/about-recreation-facilities">ADA Accessibility Guidelines for Recreation Facilities</a></p>
+		 </div>
+        </div>
+        </div>
+        <div class="clearfix"></div>
+      </div> 
+    </div>
+  </div>
+</div>
+   
+  			
+       <div class="bg-color white fadein scaleInv anim_3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+		  <h2>National Organizations</h2>
+<ul>
+	<li><a href="http://www.aapd.com/" target="_blank">American Association of People with Disabilities</a> – The American Association of People with Disabilities is the largest nonprofit, nonpartisan, cross-disability organization in the United States.</li>
+	<li><a href="http://www.tash.org/" target="_blank">The Association of Persons with Severe Handicaps</a> – TASH's mission is to promote the full inclusion and participation of children and adults with significant disabilities in every aspect of their community, and to eliminate the social injustices that diminish human rights. </li>
+	<li><a href="http://www.DAV.org/" target="_blank">Disabled American Veterans</a> – the DAV is a national organization advocating on behalf of and assisting veterans with disabilities.</li>
+    <li><a href="http://www.apse.org/" target="_blank">The Association of Persons in Supported Employment</a></li>
+    <li><a href="http://www.designingaccessiblecommunities.org/" target="_blank">Designing Accessible Communities</a> – A nonprofit organization providing information and education about accessibility to people with disabilities and to professionals in the fields, of design, construction, code development and enforcement.</li>
+   	<li><a href="http://www.disability.gov" target="_blank">Disability.gov</a>     – A one-stop interagency portal for information on Federal programs, services, and resources for people with disabilities, their families, employers, service providers, and other community members.</li> 
+	<li><a href="http://www.disabilityresources.org/" target="_blank">Disability Resources, Inc.</a> – A national nonprofit organization that provides information about resources for independent living.</li>    
+   	<li><a href="http://dsc.ucsf.edu/" target="_blank">Disability Statistics Center</a> produces and disseminates statistical information on disability and the status of people with disabilities in American society and establishes and monitors indicators of how conditions are changing over time to meet their health, housing, economic and social needs. </li>    
+	<li><a href="http://www.DREDF.org/" target="_blank">Disability Rights Education and Defense Fund</a> – DREDF is a national law and policy center dedicated to protecting and advancing the civil rights of people with disabilities through legislation, litigation, advocacy, technical assistance, and education and training of attorneys, advocates, persons with disabilities, and parents of children with disabilities. </li>
+        <li><a href="http://www.EasterSeals.org/" target="_blank">Easter Seals</a> serves children and adults with disabilities, their families and communities through early intervention and child development services, vocational training and employment services, and physical medicine and rehabilitation. Easter Seals has more than 400 service sites across the country, including Washington, D.C., and Puerto Rico.</li>
+       	<li><a href="http://www.adaptenv.org/" target="_blank">The Inst. for Human Centered Design</a> (formerly Adaptive Environments) promotes accessibility as well as universal design through education programs, technical assistance, training, consulting, publications and design advocacy. Its mission is to promote, facilitate, and advocate for international adoption of policies and designs that enable every individual, regardless of disability or age, to participate fully in all aspects of society.</li>
+	<li><a href="http://www.independentliving.org/" target="_blank">Institute on Independent Living</a> – The Institute serves self-help organizations of disabled people who work for self-determination and equal opportunities; provides information, training materials and technical assistance on accessibility, personal assistance, advocacy, legislation and peer support; publishes articles, reports, manuals or comments and other materials related to Independent Living</li>    
+	<li><a href="http://www.nod.org/" target="_blank">National Organization on Disabilities</a> – NOD promotes the full and equal participation and contribution of America's 54 million men, women and children with disabilities in all aspects of life.</li>
+	<li><a href="http://www.npnd.org/" target="_blank">National Parent Network on Disabilities</a></li>
+	<li><a href="http://www.nacdd.org/" target="_blank">National Assn. of Councils on Developmental Disabilities (NACDD)</a></li>
+    <li><a href="http://www.PVA.org/" target="_blank">Paralyzed Veterans of America</a> – PVA is a national advocacy organization representing veterans.</li>
+	<li><a href="http://www.ucpa.org/" target="_blank">United Cerebral Palsy Association</a> UCP's mission is to advance the independence, productivity and full citizenship of people with cerebral palsy and other disabilities, through our commitment to the principles of independence, inclusion and self-determination.</li>
+   	<li><a href="http://www.npnd.org/" target="_blank">National Parent Network on Disabilities</a></li>
+    <li><a href="http://www.spinalcord.org/" target="_blank">National Spinal Cord Injury Association</a> provides active-lifestyle information, peer support and advocacy that empowers people living with spinal cord injuries and disorders (SCI/D) to achieve their highest potential.</li>
+    <li><a href="http://www.wid.org/" target="_blank">World Inst. on Disability</a> – WID is an international public policy center dedicated to carrying out research on disability issues and overcoming obstacles to independent living.</li>
+</ul>
+
+<h2>Other  Organizations &amp; Informative Websites </h2>
+<ul>
+	<li><a href="http://www.os.dhhs.gov/" target="_blank">US Dept. of Health & Human Services</a></li>
+	<li><a href="http://www.connriver.net/ClaraMartin/" target="_blank">Clara Martin Center</a></li>
+	<li><a href="http://www.naric.com/" target="_blank">National Rehabilitation Information Center</a></li>
+	<li><a href="http://www.rarediseases.org/" target="_blank">National Organization for Rare Disorders</a></li>
+	<li><a href="http://www.nlm.nih.gov/" target="_blank">US National Library of Medicine</a></li>
+	<li><a href="http://www.nlm.nih.gov/medlineplus/" target="_blank">MEDLINEplus</a></li>
+	<li><a href="http://www.downsyndrome.com/" target="_blank">Family Empowerment Network: Down Syndrome</a></li>
+	<li><a href="http://www.diabetes.org/" target="_blank">Diabetes</a></li>
+	<li><a href="http://www.disability.gov/" target="_blank">One-Stop Online Access to Federal Government Resources, Services and Information</a></li>
+	<li><a href="http://www.unitedway.org/" target="_blank">The United Way</a></li>
+	<li><a href="http://www.kidsource.com/" target="_blank">Kids Source Online</a></li>
+	<li><a href="http://www.uvm.edu/~cdci/" target="_blank">Center for Development and Community Inclusion</a></li>
+	</ul>
+<p><strong>Georgia Specific Resources</strong></p>
+	<ul>
+    <li><a href="http://www.gaada.info/" target="_blank">Disability Resource Group</a></li>
+    <li><a href="http://northgeorgia.easterseals.com/site/PageServer?pagename=GADR01_homepage" target="_blank">Easter Seals of North Georgia</a></li>
+    <li><a href="http://www.GCDD.org/" target="_blank">Georgia Council on Developmental Disabilities </a></li>
+	<li><a href="http://www.legacylink.org/" target="_blank">Northeast Georgia Area Agency on Aging</a></li>
+    <li><a href="http://www.ourneighbor.org/" target="_blank">Our Neighbor, Inc.</a></li>
+    <li><a href="http://www.outdoorswithoutlimits.net/" target="_blank">Outdoors without Limits</a></li>
+	<li><a href="http://www.Shepherd.org/" target="_blank">Shepherd Center</a></li>
+	</ul>
+
+
+
+	   </div>
+        </div>
+      </div>
+    </div>
+			
+
+			<script type="text/javascript" src="http://health.nih.gov/rss/mediaJS.aspx?LoadContent=NIHNews"></script>
+			<noscript><iframe title="NIH Media Updates" src="http://health.nih.gov/rss/mediaJS_NonScript.aspx?LoadContent=NIHNews" name="mediaframe" frameborder="0" id="mediaframe" scrolling="no" height="200" width="125" marginheight="0" marginwidth="0">
+			</iframe></noscript>
+  			
+ 
+	
+   
+       
+		
+		
+	       
+
+    
+  
+    </section>
+ <footer>
+      <div class="container">
+        <div class="row">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+ <hr> <p>Contributions made<strong>
+				<a href="https://www.gagivesday.org/c/GGD/Search?p=1&amp;keyword=access%20to%20a%20better%20tomorrow">online</a> 
+				and through through PayPal are tax-deductible donation.</strong><br>
+  <input type="hidden" name="cmd" value="_s-xclick">
+  <input type="hidden" name="hosted_button_id" value="D35KFW4PFPL7S">
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+  </p>
+<hr>
+</form>
+
+         
+
+
+        </div>
+      </div>
+      <div class="bg-color black fixed-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="copyright-section"><p>Copyright � 2014 Access to a Better Tomorrow. All rights reserved.</p></div>
+            </div>
+<div class="col-sm-6 col-md-6" style="padding-top:18px;>
+            <div class="social">
+             
+                <a href="https://www.facebook.com/pages/Access-To-A-Better-Tomorrow/7574851076461966"><div class="social-box"><i class="mukam-face"></i></div></a>  
+            </div>
+          </div>
+  
+			
+			
+          </div>
+        </div>
+      </div>
+    </footer>
+</div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+     <script src="js/jquery.queryloader2.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
+    <script src="js/jquery.carouFredSel-6.2.1.js"></script>
+    <script src="js/jquery.touchSwipe.min.js"></script> 
+    <script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <!-- Masonry -->
+    <script src="js/masonry.pkgd.min.js"></script> 
+    <script src="js/SmoothScroll.js"></script>   
+    <!-- Main.js should be below all javascript --> 
+    <script src="js/main.js"></script>
+    <script src="js/styleswitcher.js"></script>
+
+
+  </body>
+</html>
